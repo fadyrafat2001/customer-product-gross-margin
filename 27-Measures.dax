@@ -1,0 +1,17 @@
+// UNEXECUTED DAX. Create each definition as a separate measure.
+
+Gross Sales EGP = SUM(FactSales[Gross_Sales_EGP])
+
+Discount EGP = SUM(FactSales[Discount_EGP])
+
+Net Sales EGP = [Gross Sales EGP] - [Discount EGP]
+
+COGS EGP = SUM(FactSales[COGS_EGP])
+
+Gross Profit EGP = [Net Sales EGP] - [COGS EGP]
+
+Gross Margin Pct = DIVIDE([Gross Profit EGP], [Net Sales EGP])
+
+Discount Rate = DIVIDE([Discount EGP], [Gross Sales EGP])
+
+Units Sold = SUM(FactSales[Units])
